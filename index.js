@@ -30,10 +30,8 @@ app.post('/insert',async (req,res)=>{
         '${req.body.empresa}','${req.body.cargo}','${req.body.pais}','${req.body.region}','${req.body.expositor1}','${req.body.mensaje1}',
         '${req.body.expositor2}','${req.body.mensaje2}');
     `, function(err, rows, fields) {
-        if (err)rsp=err;
-        //console.log('The solution is: ', rows[0].solution);
+        if (err)rsp=err;    
       });
-      //connection.end();
      res.send(rsp)
 })
 
