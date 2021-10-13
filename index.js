@@ -25,14 +25,15 @@ app.post('/insert',async (req,res)=>{
     let rsp="OK";
 
     await connection.query(`
-        INSERT INTO bootcamp.cliente (nombres,apellidos,correo,telefono,empresa,cargo,pais,region)
+        INSERT INTO bootcamp.cliente (nombres,apellidos,correo,telefono,empresa,cargo,pais,region,expositor1,mensaje1,expositor2,mensaje2)
         VALUES ('${req.body.nombres}','${req.body.apellidos}','${req.body.correo}','${req.body.telefono}',
-        '${req.body.empresa}','${req.body.cargo}','${req.body.pais}','${req.body.region}');
+        '${req.body.empresa}','${req.body.cargo}','${req.body.pais}','${req.body.region}','${req.body.expositor1}','${req.body.mensaje1}',
+        '${req.body.expositor2}','${req.body.mensaje2}');
     `, function(err, rows, fields) {
         if (err)rsp=err;
         //console.log('The solution is: ', rows[0].solution);
       });
-      connection.end();
+      //connection.end();
      res.send(rsp)
 })
 
