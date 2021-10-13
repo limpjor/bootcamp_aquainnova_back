@@ -3,7 +3,9 @@ const cors     = require('cors');
 var mysql      = require('mysql');
 
 var connection = mysql.createConnection({
-    host     : '34.121.4.15',
+    
+   // socketPath : '/cloudsql/arched-envelope-328900:us-central1:xpertpro',
+   host     : '34.121.4.15',
     port     : '3306',
     user     : 'xpertpro_jorge',
     password : 'bootcamp_aquainnova'
